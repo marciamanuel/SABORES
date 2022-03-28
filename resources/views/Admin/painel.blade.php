@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="images/favicon.png" rel="icon">
-  <title>FAMMS</title>
+  <title></title>
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/css/ruang-admin.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
         <div class="sidebar-brand-icon">
           <img src="images/favicon.png">
         </div>
-        <div class="sidebar-brand-text mx-3">FAMMS</div>
+        <div class="sidebar-brand-text mx-3">Sabores da Banda</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
@@ -57,8 +57,8 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
 
-            <a class="collapse-item" href="{{('sabores.create')}}">Cadastrar</a>
-            <a class="collapse-item" href="">Listar</a>
+            <a class="collapse-item" href="{{route('sabores.create')}}">Cadastrar</a>
+            <a class="collapse-item" href="{{route('sabores.listar')}}">Listar</a>
           </div>
         </div>
       </li>
@@ -230,7 +230,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">{{Auth::user()->name}}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">

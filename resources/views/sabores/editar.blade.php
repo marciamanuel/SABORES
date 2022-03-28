@@ -1,6 +1,5 @@
 @extends('Admin.painel')
 @section('content')
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   
             <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
@@ -24,37 +23,38 @@
   
                       </div>
                       <div class="card-body">
-                        <form action="{{route('index.store')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('sabores.atualizar',$produto->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                           <div class="form-group">
                               <label for="exampleInputEmail1">Nome</label>
-                              <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" value= "{{ isset($produto->nome) ? $produto->nome : "" }}" name="nome" aria-describedby="emailHelp"
+                              <input type="text" class="form-control" id="nome" value= "{{ isset($produto->nome) ? $produto->nome : "" }}" name="nome" aria-describedby="emailHelp"
                                 placeholder="digite o nome do produto" style="border-radius:25px">
   
                             </div>
                           <div class="form-group">
                             <label for="exampleInputEmail1">Preço</label>
-                            <input type="number" class="form-control @error('preco') is-invalid @enderror"  id="preco" value= "{{ isset($produto->preco) ? $produto->preco : "" }}"  name="preco" aria-describedby="emailHelp"
+                            <input type="number" class="form-control" id="preco" value= "{{ isset($produto->preco) ? $produto->preco : "" }}"  name="preco" aria-describedby="emailHelp"
                               placeholder="digite o preço do produto" style="border-radius:25px">
   
                           </div>
                           
                             <div class="form-group">
                               <label for="description">Descrição</label>
-                              <input type="text" class="form-control @error('descricao') is-invalid @enderror" id="descricao"  name="descricao"  aria-describedby="emailHelp"
+                              <input type="text" class="form-control" id="descricao"  name="descricao"  aria-describedby="emailHelp"
                                 placeholder="digite a quantidade do produto" style="border-radius:25px">
   
                             </div>
   
                           <div class="form-group">
                             <div class="custom-file">
-                              <input type="file"  class="custom-file-input @error('foto') is-invalid @enderror" value= "{{ isset($produto->foto) ? $produto->foto : "" }}" id="foto" name="foto" style="border-radius:25px; color:black">
+                              <input type="file" class="custom-file-input" value= "{{ isset($produto->foto) ? $produto->foto : "" }}" id="foto" name="foto" style="border-radius:25px; color:black">
                               <label class="custom-file-label" for="customFile" style="border-radius:25px">fotográfia</label>
                             </div>
                           </div>
   
                           <div class="d-flex justify-content-center">
-                          <button type="submit" class="btn btn-primary">Cadastrar</button>
+                          <button type="submit" class="btn btn-primary">Atualizar</button>
                           </div>
                         </form>
                       </div>
@@ -71,57 +71,4 @@
         <!-- Footer -->
       </div>
     </div> 
-
-    @error('nome')
-    
-
-    <script>
-      swal({
-  title: "Nome",
-  text: "{{ $error }}",
-  icon: "error",
-  button: "OK",
-});
-    </script>
-@enderror
-
-@error('preco')
-    <div class="alert alert-danger"></div>
-    <script>
-      swal({
-  title: "Preço",
-  text: "{{ $message }}",
-  icon: "error",
-  button: "OK",
-});
-    </script>
-@enderror
-
-@error('descricao')
-    
-    <script>
-      swal({
-  title: "Descrição",
-  text: "{{ $message }}",
-  icon: "error",
-  button: "OK",
-});
-    </script>
-@enderror
-
-@error('foto')
-    
-    <script>
-      swal({
-  title: "Foto",
-  text: "{{ $message }}",
-  icon: "error",
-  button: "OK",
-});
-    </script>
-@enderror
-
-
-
-
                                     @endsection

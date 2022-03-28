@@ -16,9 +16,16 @@ use App\Http\Controllers\ProdutoController;
 
 Route::get('/', function () {
     return view('welcome');
-    Route::get('/index', [ProdutoController::class, 'index']);
-    Route::get('/sabores/create', [ProdutoController::class, 'create'])->name('sabores/create');
+   
 });
+Route::get('/index', [ProdutoController::class, 'index']);
+Route::get('/sabores/create', [ProdutoController::class, 'create'])->name('sabores.create');
+Route::post('/store', [ProdutoController::class, 'store'])->name('index.store');
+Route::get('/sabores/listar', [ProdutoController::class, 'tabela'])->name('sabores.listar');
+Route::get('/sabores/editar', [ProdutoController::class, 'edit'])->name('sabores.editar');
+Route::get('/eliminar{id}', [ProdutoController::class, 'eliminar'])->name('sabores.eliminar');
+Route::get('/sabores/editar{id}', [ProdutoController::class, 'edit'])->name('sabores.editar');
+Route::put('/update{id}', [ProdutoController::class, 'update'])->name('sabores.atualizar');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
