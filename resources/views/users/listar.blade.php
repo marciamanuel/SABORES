@@ -21,24 +21,23 @@
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Nome</th>
-                <th scope="col">Preço</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Foto</th>
-                <th scope="col">Acções</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                
 
 
 
               </tr>
             </thead>
             <tbody>
-                @foreach ($produto as $listar )
+                @foreach ($user as $listar )
 
 
               <tr>
-                <th scope="row">{{ $listar->nome }}</th>
-                <td>{{ $listar->preco}}</td>
-                <td>{{ $listar->descricao }}</td>
-                <td>{{ $listar->foto}}</td>
+                <th scope="row">{{ $listar->name }}</th>
+                <td>{{ $listar->email}}</td>
+                <td>{{ $listar->password }}</td>
+               
                 <td>
                 <div class="dropdown">
   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
@@ -46,8 +45,8 @@
   </a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="{{route('sabores.editar', $listar->id)}}">Editar</a>
-    <a class="dropdown-item" href="{{route('sabores.eliminar', $listar->id)}}">Eliminar</a>
+    <a class="dropdown-item" href="{{route('users.editar', $listar->id)}}">Editar</a>
+    <a class="dropdown-item" href="{{route('users.eliminar', $listar->id)}}">Eliminar</a>
    <script>
        swal({
   title: "Tens a certeza?",

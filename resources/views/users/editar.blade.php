@@ -23,32 +23,29 @@
 
         </div>
         <div class="card-body">
-          <form action="{{route('sabores.atualizar',$produto->id)}}" method="post" enctype="multipart/form-data">
+          <form action="{{route('users.atualizar',$user->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">
               <label for="exampleInputEmail1">Nome</label>
-              <input type="text" class="form-control" id="nome" value="{{ isset($produto->nome) ? $produto->nome : "" }}" name="nome" aria-describedby="emailHelp" placeholder="digite o nome do produto" style="border-radius:25px">
-
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Preço</label>
-              <input type="number" class="form-control" id="preco" value="{{ isset($produto->preco) ? $produto->preco : "" }}" name="preco" aria-describedby="emailHelp" placeholder="digite o preço do produto" style="border-radius:25px">
+              <input type="text" class="form-control" id="name" value="{{ isset($user->name) ? $user->name : "" }}" name="name" aria-describedby="emailHelp" placeholder="digite o seu nome" style="border-radius:25px">
 
             </div>
 
             <div class="form-group">
-              <label for="description">Descrição</label>
-              <input type="text" class="form-control" id="descricao" name="descricao" aria-describedby="emailHelp" placeholder="digite a quantidade do produto" style="border-radius:25px">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="digite o seu email" style="border-radius:25px">
 
             </div>
-
             <div class="form-group">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" value="{{ isset($produto->foto) ? $produto->foto : "" }}" id="foto" name="foto" style="border-radius:25px; color:black">
-                <label class="custom-file-label" for="customFile" style="border-radius:25px">fotográfia</label>
-              </div>
+              <label for="exampleInputEmail1">Password</label>
+              <input type="text" class="form-control" id="password" value="{{ isset($user->password) ? $user->password : "" }}" name="password" aria-describedby="emailHelp" placeholder="digite a sua password" style="border-radius:25px">
+
             </div>
+
+            
+
+           
 
             <div class="d-flex justify-content-center">
               <button type="submit" class="btn btn-primary">Atualizar</button>

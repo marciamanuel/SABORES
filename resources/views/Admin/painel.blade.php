@@ -42,8 +42,8 @@
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
 
-            <a class="collapse-item" href="">Cadastrar</a>
-            <a class="collapse-item" href="">Listar</a>
+            <a class="collapse-item" href="{{route('users.create')}}">Cadastrar</a>
+            <a class="collapse-item" href="{{route('users.listar')}}">Listar</a>
 
           </div>
         </div>
@@ -57,7 +57,7 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
 
-            <a class="collapse-item" href="{{route('sabores.create')}}">Cadastrar</a>
+            <a class="collapse-item" href="{{url('/sabores/create')}}">Cadastrar</a>
             <a class="collapse-item" href="{{route('sabores.listar')}}">Listar</a>
           </div>
         </div>
@@ -289,6 +289,7 @@
   <script src="js/ruang-admin.min.js"></script>
   <script src="vendor/chart.js/Chart.min.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
+ 
 </body>
 
 </html>

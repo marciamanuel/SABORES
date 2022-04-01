@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,13 @@ Route::get('/sabores/editar', [ProdutoController::class, 'edit'])->name('sabores
 Route::get('/eliminar{id}', [ProdutoController::class, 'eliminar'])->name('sabores.eliminar');
 Route::get('/sabores/editar{id}', [ProdutoController::class, 'edit'])->name('sabores.editar');
 Route::put('/update{id}', [ProdutoController::class, 'update'])->name('sabores.atualizar');
+Route::get('/sabores/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/store', [UserController::class, 'store'])->name('index.store');
+Route::get('/users/listar', [UserController::class, 'tabela'])->name('users.listar');
+Route::get('/users/editar', [UserController::class, 'edit'])->name('users.editar');
+Route::get('/eliminar{id}', [UserController::class, 'eliminar'])->name('users.eliminar');
+Route::get('/users/editar{id}', [UserController::class, 'edit'])->name('users.editar');
+Route::put('/update{id}', [UserController::class, 'update'])->name('users.atualizar');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

@@ -28,30 +28,25 @@
                             @csrf
                           <div class="form-group">
                               <label for="exampleInputEmail1">Nome</label>
-                              <input type="text" class="form-control @error('nome') is-invalid @enderror" id="nome" value= "{{ isset($produto->nome) ? $produto->nome : "" }}" name="nome" aria-describedby="emailHelp"
-                                placeholder="digite o nome do produto" style="border-radius:25px">
+                              <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" value= "{{ isset($user->nome) ? $user->name : "" }}" name="name" aria-describedby="emailHelp"
+                                placeholder="digite o seu nome" style="border-radius:25px">
   
                             </div>
                           <div class="form-group">
-                            <label for="exampleInputEmail1">Preço</label>
-                            <input type="number" class="form-control @error('preco') is-invalid @enderror"  id="preco" value= "{{ isset($produto->preco) ? $produto->preco : "" }}"  name="preco" aria-describedby="emailHelp"
-                              placeholder="digite o preço do produto" style="border-radius:25px">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="text" class="form-control @error('email') is-invalid @enderror"  id="email" value= "{{ isset($user->email) ? $user->email : "" }}"  name="email" aria-describedby="emailHelp"
+                              placeholder="digite o email" style="border-radius:25px">
   
                           </div>
                           
                             <div class="form-group">
-                              <label for="description">Descrição</label>
-                              <input type="text" class="form-control @error('descricao') is-invalid @enderror" id="descricao"  name="descricao"  aria-describedby="emailHelp"
-                                placeholder="digite a quantidade do produto" style="border-radius:25px">
+                              <label for="description">Password</label>
+                              <input type="text" class="form-control @error('password') is-invalid @enderror" id="password"  name="password"  aria-describedby="emailHelp"
+                                placeholder="digite a password" style="border-radius:25px">
   
                             </div>
   
-                          <div class="form-group">
-                            <div class="custom-file">
-                              <input type="file"  class="custom-file-input @error('foto') is-invalid @enderror" value= "{{ isset($produto->foto) ? $produto->foto : "" }}" id="foto" name="foto" style="border-radius:25px; color:black">
-                              <label class="custom-file-label" for="customFile" style="border-radius:25px">fotográfia</label>
-                            </div>
-                          </div>
+                          
   
                           <div class="d-flex justify-content-center">
                           <button type="submit" class="btn btn-primary">Cadastrar</button>
@@ -72,7 +67,7 @@
       </div>
     </div> 
 
-    @error('nome')
+    @error('name')
     
 
     <script>
@@ -85,11 +80,11 @@
     </script>
 @enderror
 
-@error('preco')
+@error('email')
     <div class="alert alert-danger"></div>
     <script>
       swal({
-  title: "Preço",
+  title: "Email",
   text: "{{ $message }}",
   icon: "error",
   button: "OK",
@@ -97,11 +92,11 @@
     </script>
 @enderror
 
-@error('descricao')
+@error('Password')
     
     <script>
       swal({
-  title: "Descrição",
+  title: "Password",
   text: "{{ $message }}",
   icon: "error",
   button: "OK",
@@ -109,17 +104,6 @@
     </script>
 @enderror
 
-@error('foto')
-    
-    <script>
-      swal({
-  title: "Foto",
-  text: "{{ $message }}",
-  icon: "error",
-  button: "OK",
-});
-    </script>
-@enderror
 
 
 
