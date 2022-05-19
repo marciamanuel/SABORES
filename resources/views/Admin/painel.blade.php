@@ -57,8 +57,7 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
 
-            <a class="collapse-item" href="{{('sabores/
-            create')}}">Cadastrar</a>
+            <a class="collapse-item" href="{{('sabores.create')}}">Cadastrar</a>
             <a class="collapse-item" href="">Listar</a>
           </div>
         </div>

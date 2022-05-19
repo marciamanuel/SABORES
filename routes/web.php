@@ -17,7 +17,8 @@ use App\Http\Controllers\ProdutoController;
 Route::get('/', function () {
     return view('welcome');
     Route::get('/index', [ProdutoController::class, 'index']);
-    Route::get('/sabores/create', [ProdutoController::class, 'create'])->name('sabores/create');
+    Route::get('/create', [ProdutoController::class, 'create'])->name('sabores-create');
+    Route::post('/produto/store', [ControllerLoja::class, 'store'])->name('index-store');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
